@@ -2,9 +2,39 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1976d2;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   padding: 10px 16px;
+}
+
+.left, .right {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  color: orange;
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.quarter {
+  color: purple;
+  margin-right: 4px;
+}
+
+.waffle {
+  color: orange;
+  margin: 0 4px;
+}
+
+.username {
+  margin-left: 4px;
+}
+
+.separator {
+  margin: 0 4px;
+  color: #555;
 }
 
 .content {
