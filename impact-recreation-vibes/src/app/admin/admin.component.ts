@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 interface Supplier {
   name: string;
@@ -55,7 +55,7 @@ interface ParticipationVibe {
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit {
   currentTab: 'setup' | 'quarter' | 'participation' = 'setup';
   lastLockdownDate: string | null = null;
   lastCloseDate: string | null = null;
@@ -128,6 +128,18 @@ export class AdminComponent {
   selectedCategoryIndex: number | null = null;
   selectedSupplierIndex: number | null = null;
 
+  ngOnInit() {
+    if (this.programs.length > 0) {
+      this.selectedProgramIndex = 0;
+      if (this.programs[0].categories.length > 0) {
+        this.selectedCategoryIndex = 0;
+        if (this.programs[0].categories[0].suppliers.length > 0) {
+          this.selectedSupplierIndex = 0;
+        }
+      }
+    }
+  }
+
   get selectedProgram(): Program | null {
     return this.selectedProgramIndex !== null ? this.programs[this.selectedProgramIndex] : null;
   }
@@ -157,8 +169,13 @@ export class AdminComponent {
 
   selectProgram(index: number) {
     this.selectedProgramIndex = index;
-    this.selectedCategoryIndex = null;
-    this.selectedSupplierIndex = null;
+    const program = this.selectedProgram;
+    if (program && program.categories.length > 0) {
+      this.selectCategory(0);
+    } else {
+      this.selectedCategoryIndex = null;
+      this.selectedSupplierIndex = null;
+    }
   }
 
   addCategory() {
@@ -172,7 +189,12 @@ export class AdminComponent {
 
   selectCategory(index: number) {
     this.selectedCategoryIndex = index;
-    this.selectedSupplierIndex = null;
+    const category = this.selectedCategory;
+    if (category && category.suppliers.length > 0) {
+      this.selectedSupplierIndex = 0;
+    } else {
+      this.selectedSupplierIndex = null;
+    }
   }
 
   addSupplier() {

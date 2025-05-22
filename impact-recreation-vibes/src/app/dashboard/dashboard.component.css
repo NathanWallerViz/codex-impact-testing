@@ -9,7 +9,7 @@
 
 .dashboard-title {
   margin-top: 0;
-  color: purple;
+  color: #7f5eba;
   font-size: 2rem;
   text-align: left;
 }
@@ -30,7 +30,7 @@
 
 .news-header,
 .entry-header {
-  background-color: purple;
+  background-color: #7f5eba;
   color: #fff;
   padding: 8px;
   border-radius: 4px;

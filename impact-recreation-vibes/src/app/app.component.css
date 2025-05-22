@@ -20,19 +20,20 @@
 }
 
 .brand {
-  color: orange;
+  color: #ff4e00;
   font-weight: bold;
   margin-right: 4px;
 }
 
 .quarter {
-  color: purple;
+  color: #7f5eba;
   margin-right: 4px;
 }
 
 .waffle {
-  color: orange;
+  color: #ff4e00;
   margin: 0 4px;
+  cursor: pointer;
 }
 
 .dropdown {
@@ -74,11 +75,12 @@
   padding: 10px 16px;
   background-color: #fff;
   border-top: 1px solid #ccc;
+  margin-top: auto;
 }
 
 .footer-left,
 .footer-right {
-  color: orange;
+  color: #ff4e00;
   font-weight: bold;
 }
 
