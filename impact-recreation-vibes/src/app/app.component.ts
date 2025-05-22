@@ -7,18 +7,32 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'impact-recreation-vibes';
-  newsItems: string[] = [
-    'New Vibe partnership announced.',
-    'Community event scheduled for next week.',
-    'Quarterly results show positive growth.'
+
+  newsItems: { title: string; description: string }[] = [
+    {
+      title: 'New Vibe partnership announced.',
+      description: 'A new partnership is forming to bring more vibes to the community.'
+    },
+    {
+      title: 'Community event scheduled for next week.',
+      description: 'Join us next week for a celebration of all things vibey.'
+    },
+    {
+      title: 'Quarterly results show positive growth.',
+      description: 'Latest numbers indicate the vibes are stronger than ever.'
+    }
   ];
-  newNews = '';
+
+  newNewsTitle = '';
+  newNewsDescription = '';
 
   addNews() {
-    const item = this.newNews.trim();
-    if (item) {
-      this.newsItems.push(item);
-      this.newNews = '';
+    const title = this.newNewsTitle.trim();
+    const description = this.newNewsDescription.trim();
+    if (title && description) {
+      this.newsItems.push({ title, description });
+      this.newNewsTitle = '';
+      this.newNewsDescription = '';
     }
   }
 
