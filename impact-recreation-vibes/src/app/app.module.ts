@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminComponent } from './admin/admin.component';
 import { VibeManagementComponent } from './vibe-management/vibe-management.component';
+import { VibeidationSearchComponent } from './vibeidation-search/vibeidation-search.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'admin', component: AdminComponent },
-  { path: 'vibe-management', component: VibeManagementComponent }
+  { path: 'vibe-management', component: VibeManagementComponent },
+  { path: 'vibeidation-search', component: VibeidationSearchComponent }
 ];
 
 @NgModule({
@@ -19,7 +21,8 @@ const routes: Routes = [
     AppComponent,
     DashboardComponent,
     AdminComponent,
-    VibeManagementComponent
+    VibeManagementComponent,
+    VibeidationSearchComponent
   ],
   imports: [
     BrowserModule,
