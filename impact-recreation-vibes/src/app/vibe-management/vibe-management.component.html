@@ -1,0 +1,35 @@
+<div class="management-page">
+  <div class="card">
+    <h2>Signed vibe agreement search</h2>
+    <div class="inputs">
+      <input placeholder="System Name/ID" [(ngModel)]="systemId" (input)="onInputChange()" />
+      <input placeholder="Member Name/ID" [(ngModel)]="memberId" (input)="onInputChange()" />
+      <button *ngIf="showSearchButton" (click)="search()">Search</button>
+    </div>
+    <div *ngIf="searchResults" class="results">
+      <p>Vibe Name: {{ searchResults.name }}</p>
+      <p>Vibe ID: {{ searchResults.id }}</p>
+      <p>Vibe System: {{ searchResults.system }}</p>
+      <p>Vibe System ID: {{ searchResults.systemId }}</p>
+      <p>Address: {{ searchResults.address }}</p>
+      <p>City: {{ searchResults.city }}</p>
+      <p>State: {{ searchResults.state }}</p>
+      <p>Zip: {{ searchResults.zip }}</p>
+      <button (click)="openUploadCard()">Upload vibe agreement</button>
+    </div>
+  </div>
+
+  <div class="card upload" *ngIf="showUploadCard">
+    <h2>Upload signed vibe agreement</h2>
+    <select [(ngModel)]="selectedAgreement">
+      <option [ngValue]="null" disabled selected>Select agreement</option>
+      <option value="1">Vibe agreement 1</option>
+      <option value="2">Vibe agreement 2</option>
+      <option value="3">Vibe agreement 3</option>
+    </select>
+    <div class="buttons">
+      <button (click)="cancelUpload()">Cancel</button>
+      <button [disabled]="!selectedAgreement" (click)="completeVibe()">Complete vibe</button>
+    </div>
+  </div>
+</div>
