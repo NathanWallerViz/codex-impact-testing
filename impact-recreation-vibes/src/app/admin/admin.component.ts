@@ -49,7 +49,50 @@ interface Program {
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
-  programs: Program[] = [];
+  programs: Program[] = [
+    {
+      name: 'Feathered Funds',
+      visible: true,
+      categories: [
+        {
+          name: 'Gosling Growth',
+          visible: true,
+          suppliers: [
+            { name: 'Honker Holdings', visible: true },
+            { name: 'Downy Deposits', visible: true }
+          ]
+        },
+        {
+          name: 'Winged Wealth',
+          visible: true,
+          suppliers: [
+            { name: 'Beak Bank', visible: true }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'Honk-Savvy Savings',
+      visible: true,
+      categories: [
+        {
+          name: 'Quill Credits',
+          visible: true,
+          suppliers: [
+            { name: 'Feather Finance', visible: true },
+            { name: 'Gander Gold', visible: true }
+          ]
+        },
+        {
+          name: 'Flock Futures',
+          visible: true,
+          suppliers: [
+            { name: 'Goose Gilt', visible: true }
+          ]
+        }
+      ]
+    }
+  ];
   selectedProgramIndex: number | null = null;
   selectedCategoryIndex: number | null = null;
   selectedSupplierIndex: number | null = null;
