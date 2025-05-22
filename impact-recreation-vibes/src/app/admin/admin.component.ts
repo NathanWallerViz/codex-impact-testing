@@ -49,6 +49,10 @@ interface Program {
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
+  currentTab: 'setup' | 'quarter' | 'other' = 'setup';
+  lastLockdownDate: string | null = null;
+  lastCloseDate: string | null = null;
+  quarterAction: 'lockdown' | 'close' = 'lockdown';
   programs: Program[] = [
     {
       name: 'Feathered Funds',
@@ -154,5 +158,16 @@ export class AdminComponent {
 
   selectSupplier(index: number) {
     this.selectedSupplierIndex = index;
+  }
+
+  handleQuarterAction() {
+    const today = new Date().toLocaleDateString();
+    if (this.quarterAction === 'lockdown') {
+      this.lastLockdownDate = today;
+      this.quarterAction = 'close';
+    } else {
+      this.lastCloseDate = today;
+      this.quarterAction = 'lockdown';
+    }
   }
 }
