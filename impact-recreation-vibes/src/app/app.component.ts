@@ -21,4 +21,8 @@ export class AppComponent {
       this.newNews = '';
     }
   }
+
+  deleteNews(index: number) {
+    this.newsItems.splice(index, 1);
+  }
 }
