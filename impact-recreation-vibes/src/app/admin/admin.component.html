@@ -1,3 +1,75 @@
 <div class="admin-page">
   <h1>Admin</h1>
+
+  <section class="programs">
+    <h2>Programs</h2>
+    <button (click)="addProgram()">Add Program</button>
+    <ul>
+      <li *ngFor="let program of programs; let i = index" (click)="selectProgram(i)" [class.selected]="i === selectedProgramIndex">
+        {{ program.name }}
+      </li>
+    </ul>
+  </section>
+
+  <section class="program-detail" *ngIf="selectedProgram">
+    <h3>Program Details</h3>
+    <label>Name <input [(ngModel)]="selectedProgram!.name" /></label>
+    <label>Start Date <input type="date" [(ngModel)]="selectedProgram!.startDate" /></label>
+    <label>End Date <input type="date" [(ngModel)]="selectedProgram!.endDate" /></label>
+    <label>Visible <input type="checkbox" [(ngModel)]="selectedProgram!.visible" /></label>
+    <label>Opt Outs <input [(ngModel)]="selectedProgram!.optOuts" /></label>
+    <label>Program Type <input [(ngModel)]="selectedProgram!.programType" /></label>
+    <label>Compliance % <input type="number" [(ngModel)]="selectedProgram!.compliance" /></label>
+    <label>Predecessor Program <input [(ngModel)]="selectedProgram!.predecessorProgram" /></label>
+    <label>Account Number <input [(ngModel)]="selectedProgram!.accountNumber" /></label>
+    <label>Account Description <input [(ngModel)]="selectedProgram!.accountDescription" /></label>
+    <label>Check Process Order <input [(ngModel)]="selectedProgram!.checkProcessOrder" /></label>
+    <label>Process Level <input [(ngModel)]="selectedProgram!.processLevel" /></label>
+  </section>
+
+  <section class="categories" *ngIf="selectedProgram">
+    <h3>Categories</h3>
+    <button (click)="addCategory()">Add Category</button>
+    <ul>
+      <li *ngFor="let category of selectedProgram!.categories; let i = index" (click)="selectCategory(i)" [class.selected]="i === selectedCategoryIndex">
+        {{ category.name }}
+      </li>
+    </ul>
+  </section>
+
+  <section class="category-detail" *ngIf="selectedCategory">
+    <h4>Category Details</h4>
+    <label>Category Name <input [(ngModel)]="selectedCategory!.name" /></label>
+    <label>Start Date <input type="date" [(ngModel)]="selectedCategory!.startDate" /></label>
+    <label>End Date <input type="date" [(ngModel)]="selectedCategory!.endDate" /></label>
+    <label>Visible <input type="checkbox" [(ngModel)]="selectedCategory!.visible" /></label>
+  </section>
+
+  <section class="suppliers" *ngIf="selectedCategory">
+    <h4>Suppliers</h4>
+    <button (click)="addSupplier()">Add Supplier</button>
+    <ul>
+      <li *ngFor="let supplier of selectedCategory!.suppliers; let i = index" (click)="selectSupplier(i)" [class.selected]="i === selectedSupplierIndex">
+        {{ supplier.name }}
+      </li>
+    </ul>
+  </section>
+
+  <section class="supplier-detail" *ngIf="selectedSupplier">
+    <h5>Supplier Details</h5>
+    <label>Name <input [(ngModel)]="selectedSupplier!.name" /></label>
+    <label>Visible <input type="checkbox" [(ngModel)]="selectedSupplier!.visible" /></label>
+    <label>Primary Contract <input [(ngModel)]="selectedSupplier!.primaryContract" /></label>
+    <label>Contract Modifier <input [(ngModel)]="selectedSupplier!.contractModifier" /></label>
+    <label>Contract Start Date <input type="date" [(ngModel)]="selectedSupplier!.contractStartDate" /></label>
+    <label>Contract End Date <input type="date" [(ngModel)]="selectedSupplier!.contractEndDate" /></label>
+    <label>Associated Supplier <input [(ngModel)]="selectedSupplier!.associatedSupplier" /></label>
+    <label>Compliance Percentage <input type="number" [(ngModel)]="selectedSupplier!.compliancePercentage" /></label>
+    <label>Supplier Display Name <input [(ngModel)]="selectedSupplier!.supplierDisplayName" /></label>
+    <label>Impact Fee Percentage <input type="number" [(ngModel)]="selectedSupplier!.impactFeePercentage" /></label>
+    <label>Impact Fee Start Date <input type="date" [(ngModel)]="selectedSupplier!.impactFeeStartDate" /></label>
+    <label>Impact Fee End Date <input type="date" [(ngModel)]="selectedSupplier!.impactFeeEndDate" /></label>
+    <label>Supplier Start Date <input type="date" [(ngModel)]="selectedSupplier!.supplierStartDate" /></label>
+    <label>Supplier End Date <input type="date" [(ngModel)]="selectedSupplier!.supplierEndDate" /></label>
+  </section>
 </div>
