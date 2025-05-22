@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'impact-recreation-vibes';
+  newsItems: string[] = [
+    'New Vibe partnership announced.',
+    'Community event scheduled for next week.',
+    'Quarterly results show positive growth.'
+  ];
+  newNews = '';
+
+  addNews() {
+    const item = this.newNews.trim();
+    if (item) {
+      this.newsItems.push(item);
+      this.newNews = '';
+    }
+  }
 }

@@ -1,0 +1,33 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1976d2;
+  color: #fff;
+  padding: 10px 16px;
+}
+
+.content {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.vibe-news ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.new-item {
+  margin-top: 10px;
+}
+
+.new-item input {
+  padding: 4px;
+  width: 70%;
+  margin-right: 8px;
+}
+
+.new-item button {
+  padding: 4px 8px;
+}
