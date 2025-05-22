@@ -99,3 +99,24 @@
 .new-item button {
   padding: 4px 8px;
 }
+
+/* Footer styles */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.footer-left,
+.footer-right {
+  color: orange;
+  font-weight: bold;
+}
+
+.footer-center {
+  text-align: center;
+  color: #000;
+}
