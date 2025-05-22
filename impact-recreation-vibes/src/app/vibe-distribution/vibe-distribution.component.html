@@ -1,0 +1,72 @@
+<div class="distribution-page">
+  <nav class="tabs">
+    <div class="tab active">Vibe Distribution</div>
+  </nav>
+
+  <div class="card">
+    <h2>Impact Vibe Categorization</h2>
+    <div class="inputs">
+      <input placeholder="impact category" [(ngModel)]="impactCategory" />
+      <input placeholder="distributor" [(ngModel)]="distributor" />
+      <input placeholder="product description" [(ngModel)]="productDescription" />
+      <input placeholder="distributor catalog number" [(ngModel)]="distributorCatalogNumber" />
+      <input placeholder="distributor categories 1" [(ngModel)]="distCat1" />
+      <input placeholder="distributor categories 2" [(ngModel)]="distCat2" />
+      <input placeholder="distributor categories 3" [(ngModel)]="distCat3" />
+      <input placeholder="distributor categories 4" [(ngModel)]="distCat4" />
+      <button (click)="addFilter()">Filter</button>
+    </div>
+
+    <ul class="filter-list" *ngIf="filters.length">
+      <li *ngFor="let f of filters">
+        {{ f.impactCategory }} {{ f.distributor }} {{ f.productDescription }} {{ f.distributorCatalogNumber }}
+        {{ f.distCat1 }} {{ f.distCat2 }} {{ f.distCat3 }} {{ f.distCat4 }}
+      </li>
+    </ul>
+
+    <div class="vibe-select" *ngIf="filters.length">
+      <select [(ngModel)]="categorySelection">
+        <option value="good vibes">good vibes</option>
+        <option value="bad vibes">bad vibes</option>
+        <option value="silly vibes">silly vibes</option>
+        <option value="wack vibes">wack vibes</option>
+      </select>
+      <button (click)="vibeSelection()">vibe</button>
+    </div>
+
+    <table *ngIf="filters.length">
+      <thead>
+        <tr>
+          <th><input type="checkbox" [(ngModel)]="selectAll" /></th>
+          <th>impact category</th>
+          <th>distr. category level 1</th>
+          <th>distr. category level 2</th>
+          <th>distr. category level 3</th>
+          <th>distr. category level 4</th>
+          <th>product description</th>
+          <th>package size</th>
+          <th>distributor name</th>
+          <th>distributor catalog number</th>
+          <th>GTIN</th>
+          <th>Spend</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of tableData">
+          <td><input type="checkbox" [(ngModel)]="row.selected" [checked]="selectAll" /></td>
+          <td>{{ row.impactCategory }}</td>
+          <td>{{ row.distCat1 }}</td>
+          <td>{{ row.distCat2 }}</td>
+          <td>{{ row.distCat3 }}</td>
+          <td>{{ row.distCat4 }}</td>
+          <td>{{ row.productDescription }}</td>
+          <td>{{ row.packageSize }}</td>
+          <td>{{ row.distributorName }}</td>
+          <td>{{ row.distributorCatalogNumber }}</td>
+          <td>{{ row.gtin }}</td>
+          <td>{{ row.spend }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+.distribution-page {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.inputs input {
+  padding: 4px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.tab {
+  padding: 8px 16px;
+  background-color: #ddd;
+  border-radius: 4px 4px 0 0;
+}
+
+.tab.active {
+  background-color: purple;
+  color: #fff;
+}
+
+.filter-list {
+  list-style: none;
+  padding: 0;
+}
+
+.filter-list li {
+  background-color: #f0f0f0;
+  margin-bottom: 4px;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.vibe-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 4px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
