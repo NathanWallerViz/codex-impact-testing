@@ -11,12 +11,27 @@ interface VibeInfo {
   zip: string;
 }
 
+interface ProgramInfo {
+  activeVibes: string;
+  status: string;
+  compliance: string;
+  rebate: string;
+  average: string;
+}
+
+interface Hospital {
+  name: string;
+  programs: ProgramInfo[];
+}
+
 @Component({
   selector: 'app-vibe-management',
   templateUrl: './vibe-management.component.html',
   styleUrls: ['./vibe-management.component.css']
 })
 export class VibeManagementComponent {
+  currentTab: 'signup' | 'config' = 'signup';
+
   systemId = '';
   memberId = '';
   showSearchButton = false;
@@ -24,8 +39,44 @@ export class VibeManagementComponent {
   showUploadCard = false;
   selectedAgreement: string | null = null;
 
+  configSystemId = '';
+  configMemberId = '';
+  configShowSearchButton = false;
+
+  hospitals: Hospital[] = [
+    {
+      name: 'General Hospital',
+      programs: [
+        {
+          activeVibes: 'Vibe A',
+          status: 'Active',
+          compliance: '95%',
+          rebate: '$1,000',
+          average: '92%'
+        }
+      ]
+    },
+    {
+      name: 'City Medical Center',
+      programs: [
+        {
+          activeVibes: 'Vibe B',
+          status: 'Pending',
+          compliance: '88%',
+          rebate: '$800',
+          average: '85%'
+        }
+      ]
+    }
+  ];
+
   onInputChange() {
     this.showSearchButton = !!this.systemId.trim() || !!this.memberId.trim();
+  }
+
+  onConfigInputChange() {
+    this.configShowSearchButton =
+      !!this.configSystemId.trim() || !!this.configMemberId.trim();
   }
 
   search() {
@@ -40,6 +91,22 @@ export class VibeManagementComponent {
       zip: (10000 + Math.floor(Math.random() * 89999)).toString()
     };
     this.showUploadCard = false;
+  }
+
+  searchConfig() {
+    // placeholder for config search
+  }
+
+  newConfiguration() {
+    // placeholder for creation logic
+  }
+
+  memberSignUpReport(h: Hospital) {
+    // placeholder for report logic
+  }
+
+  programActivation(h: Hospital) {
+    // placeholder for activation logic
   }
 
   openUploadCard() {
