@@ -1,3 +1,35 @@
 .admin-page {
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.programs ul,
+.categories ul,
+.suppliers ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.programs li,
+.categories li,
+.suppliers li {
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.selected {
+  font-weight: bold;
+}
+
+section {
+  background-color: #f9f9f9;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+label {
+  display: block;
+  margin: 4px 0;
 }
