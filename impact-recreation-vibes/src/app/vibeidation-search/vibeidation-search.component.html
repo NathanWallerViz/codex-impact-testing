@@ -1,0 +1,50 @@
+<div class="vibeidation-page">
+  <nav class="tabs">
+    <div class="tab active">Vibeidation search</div>
+  </nav>
+
+  <div class="inputs">
+    <input placeholder="System Name/ID" [(ngModel)]="system" />
+    <input placeholder="Primary Name/ID" [(ngModel)]="primary" />
+    <input placeholder="Program Name" [(ngModel)]="program" />
+    <input placeholder="Category Name" [(ngModel)]="category" />
+    <input placeholder="Validation Status" [(ngModel)]="status" />
+    <input placeholder="Supplier" [(ngModel)]="supplier" />
+    <button (click)="addFilter()">Add filter</button>
+    <button (click)="clearFilters()" *ngIf="filters.length">Clear filters</button>
+  </div>
+
+  <ul class="filter-list" *ngIf="filters.length">
+    <li *ngFor="let f of filters">
+      {{ f.system || '' }} {{ f.primary || '' }} {{ f.program || '' }}
+      {{ f.category || '' }} {{ f.status || '' }} {{ f.supplier || '' }}
+    </li>
+  </ul>
+
+  <table *ngIf="filters.length">
+    <thead>
+      <tr>
+        <th>Vibe ID</th>
+        <th>Primary Vibe ID</th>
+        <th>Primary Vibe Name</th>
+        <th>Program Vibe Name</th>
+        <th>Category Vibe Name</th>
+        <th>Supplier Vibe Name</th>
+        <th>Validation Vibe Status</th>
+        <th>Annual Vibe Potential</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of tableData">
+        <td>{{ row.vibeId }}</td>
+        <td>{{ row.primaryId }}</td>
+        <td>{{ row.primaryName }}</td>
+        <td>{{ row.programName }}</td>
+        <td>{{ row.categoryName }}</td>
+        <td>{{ row.supplierName }}</td>
+        <td>{{ row.validationStatus }}</td>
+        <td>{{ row.annualPotential }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
