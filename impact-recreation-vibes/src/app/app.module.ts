@@ -6,17 +6,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminComponent } from './admin/admin.component';
+import { VibeManagementComponent } from './vibe-management/vibe-management.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'admin', component: AdminComponent }
+  { path: 'admin', component: AdminComponent },
+  { path: 'vibe-management', component: VibeManagementComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    AdminComponent
+    AdminComponent,
+    VibeManagementComponent
   ],
   imports: [
     BrowserModule,
