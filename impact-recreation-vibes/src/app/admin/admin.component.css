@@ -43,3 +43,14 @@ label {
   font-size: 0.8rem;
   margin-left: 4px;
 }
+
+/* Override heading colors for the admin page */
+.admin-page .programs h2,
+.admin-page .program-detail h3 {
+  background-color: blue;
+}
+
+.admin-page .categories h3,
+.admin-page .category-detail h4 {
+  background-color: orange;
+}
