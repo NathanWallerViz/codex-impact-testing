@@ -5,6 +5,23 @@
   gap: 16px;
 }
 
+.tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.tab {
+  padding: 8px 16px;
+  background-color: #ddd;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+}
+
+.tab.active {
+  background-color: purple;
+  color: #fff;
+}
+
 .programs ul,
 .categories ul,
 .suppliers ul {
@@ -53,4 +70,27 @@ label {
 .admin-page .categories h3,
 .admin-page .category-detail h4 {
   background-color: orange;
+}
+
+.quarter-header {
+  background-color: teal;
+  color: #fff;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.quarter-card {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.quarter-card button {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
 }

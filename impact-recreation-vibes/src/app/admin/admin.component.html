@@ -1,5 +1,11 @@
 <div class="admin-page">
-  <h1>Admin</h1>
+  <nav class="tabs">
+    <div class="tab" [class.active]="currentTab === 'setup'" (click)="currentTab = 'setup'">Program Set Up</div>
+    <div class="tab" [class.active]="currentTab === 'quarter'" (click)="currentTab = 'quarter'">Quarter Close</div>
+    <div class="tab" [class.active]="currentTab === 'other'" (click)="currentTab = 'other'">Other</div>
+  </nav>
+
+  <div *ngIf="currentTab === 'setup'">
 
   <section class="programs">
     <h2>Programs</h2>
@@ -72,4 +78,22 @@
     <label>Supplier Start Date <input type="date" [(ngModel)]="selectedSupplier!.supplierStartDate" /></label>
     <label>Supplier End Date <input type="date" [(ngModel)]="selectedSupplier!.supplierEndDate" /></label>
   </section>
+  </div>
+
+  <div *ngIf="currentTab === 'quarter'" class="quarter-close">
+    <header class="quarter-header">
+      <span>Quarter Management</span>
+      <span class="dates">Last Lockdown: {{ lastLockdownDate || 'N/A' }} | Last Close: {{ lastCloseDate || 'N/A' }}</span>
+    </header>
+    <div class="quarter-card">
+      <h3>{{ quarterAction === 'lockdown' ? 'Initiate Vibe Lockdown' : 'Initiate Vibe Close' }}</h3>
+      <p *ngIf="quarterAction === 'lockdown'">Locking the quarter prevents further edits.</p>
+      <p *ngIf="quarterAction === 'close'">Closing the quarter finalizes all vibes.</p>
+      <button (click)="handleQuarterAction()">{{ quarterAction === 'lockdown' ? 'Initiate' : 'Vibe' }}</button>
+    </div>
+  </div>
+
+  <div *ngIf="currentTab === 'other'" class="other-tab">
+    <p>Coming soon...</p>
+  </div>
 </div>
