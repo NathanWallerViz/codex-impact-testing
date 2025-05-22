@@ -66,7 +66,15 @@
   margin-top: 20px;
 }
 
-.news-header {
+.vibe-entry {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.news-header,
+.entry-header {
   background-color: purple;
   color: #fff;
   padding: 8px;
@@ -82,8 +90,16 @@
 .vibe-news li {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 4px;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.news-item h3 {
+  margin: 0 0 4px 0;
+}
+
+.news-item p {
+  margin: 0;
 }
 
 .delete-btn {
@@ -97,10 +113,13 @@
   margin-top: 10px;
 }
 
-.new-item input {
+.new-item input,
+.new-item textarea {
   padding: 4px;
   width: 70%;
   margin-right: 8px;
+  display: block;
+  margin-top: 8px;
 }
 
 .new-item button {

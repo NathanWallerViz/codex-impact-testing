@@ -19,12 +19,20 @@
     <h2 class="news-header">Vibe News</h2>
     <ul>
       <li *ngFor="let item of newsItems; let i = index">
-        <span>{{ item }}</span>
+        <div class="news-item">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
         <button class="delete-btn" (click)="deleteNews(i)">🗑️</button>
       </li>
     </ul>
+  </section>
+
+  <section class="vibe-entry">
+    <h2 class="entry-header">Vibe Entry</h2>
     <div class="new-item">
-      <input [(ngModel)]="newNews" placeholder="Add news item" />
+      <input [(ngModel)]="newNewsTitle" placeholder="Title" />
+      <textarea [(ngModel)]="newNewsDescription" placeholder="Description"></textarea>
       <button (click)="addNews()">Add</button>
     </div>
   </section>
