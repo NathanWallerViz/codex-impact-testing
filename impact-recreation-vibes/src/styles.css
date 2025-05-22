@@ -3,3 +3,11 @@ body {
   margin: 0;
   background-color: #e0e0e0;
 }
+
+/* Heading colors */
+h1, h2, h3, h4, h5 {
+  background-color: purple;
+  color: #fff;
+  padding: 4px;
+  border-radius: 4px;
+}

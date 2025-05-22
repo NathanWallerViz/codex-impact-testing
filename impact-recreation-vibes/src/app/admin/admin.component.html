@@ -6,7 +6,7 @@
     <button (click)="addProgram()">Add Program</button>
     <ul>
       <li *ngFor="let program of programs; let i = index" (click)="selectProgram(i)" [class.selected]="i === selectedProgramIndex">
-        {{ program.name }}
+        {{ program.name }} <span class="count">{{ program.categories.length }}</span>
       </li>
     </ul>
   </section>
@@ -32,7 +32,7 @@
     <button (click)="addCategory()">Add Category</button>
     <ul>
       <li *ngFor="let category of selectedProgram!.categories; let i = index" (click)="selectCategory(i)" [class.selected]="i === selectedCategoryIndex">
-        {{ category.name }}
+        {{ category.name }} <span class="count">{{ category.suppliers.length }}</span>
       </li>
     </ul>
   </section>
