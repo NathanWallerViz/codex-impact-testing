@@ -94,3 +94,33 @@ label {
   bottom: 8px;
   right: 8px;
 }
+
+.participation-card {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.vibe-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.vibe-card {
+  background-color: #f0f0f0;
+  padding: 8px;
+  border-radius: 4px;
+  width: 180px;
+}
+
+.vibe-card.add-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vibe-card.add-card button {
+  padding: 8px 12px;
+}

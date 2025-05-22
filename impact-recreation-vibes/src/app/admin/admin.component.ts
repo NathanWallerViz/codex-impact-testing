@@ -43,13 +43,20 @@ interface Program {
   categories: Category[];
 }
 
+interface ParticipationVibe {
+  name: string;
+  version: string;
+  uploadedDate: string;
+  uploadedBy: string;
+}
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
-  currentTab: 'setup' | 'quarter' | 'other' = 'setup';
+  currentTab: 'setup' | 'quarter' | 'participation' = 'setup';
   lastLockdownDate: string | null = null;
   lastCloseDate: string | null = null;
   quarterAction: 'lockdown' | 'close' = 'lockdown';
@@ -95,6 +102,26 @@ export class AdminComponent {
           ]
         }
       ]
+    }
+  ];
+  participationVibes: ParticipationVibe[] = [
+    {
+      name: 'Super Goose Mode',
+      version: '1.0',
+      uploadedDate: '2023-09-01',
+      uploadedBy: 'AdminUser'
+    },
+    {
+      name: 'Feather Flair',
+      version: '1.1',
+      uploadedDate: '2023-09-10',
+      uploadedBy: 'VibeMaster'
+    },
+    {
+      name: 'Honker Harmony',
+      version: '2.0',
+      uploadedDate: '2023-09-15',
+      uploadedBy: 'GooseGuru'
     }
   ];
   selectedProgramIndex: number | null = null;
@@ -158,6 +185,15 @@ export class AdminComponent {
 
   selectSupplier(index: number) {
     this.selectedSupplierIndex = index;
+  }
+
+  addParticipationVibe() {
+    this.participationVibes.push({
+      name: 'New Vibe',
+      version: '1.0',
+      uploadedDate: new Date().toLocaleDateString(),
+      uploadedBy: 'You'
+    });
   }
 
   handleQuarterAction() {
