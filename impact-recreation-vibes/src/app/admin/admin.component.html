@@ -2,7 +2,7 @@
   <nav class="tabs">
     <div class="tab" [class.active]="currentTab === 'setup'" (click)="currentTab = 'setup'">Program Set Up</div>
     <div class="tab" [class.active]="currentTab === 'quarter'" (click)="currentTab = 'quarter'">Quarter Close</div>
-    <div class="tab" [class.active]="currentTab === 'other'" (click)="currentTab = 'other'">Other</div>
+    <div class="tab" [class.active]="currentTab === 'participation'" (click)="currentTab = 'participation'">Participation Vibes</div>
   </nav>
 
   <div *ngIf="currentTab === 'setup'">
@@ -93,7 +93,19 @@
     </div>
   </div>
 
-  <div *ngIf="currentTab === 'other'" class="other-tab">
-    <p>Coming soon...</p>
+  <div *ngIf="currentTab === 'participation'" class="participation-tab">
+    <div class="participation-card">
+      <h3>Participation Vibe List</h3>
+      <div class="vibe-list">
+        <div class="vibe-card" *ngFor="let vibe of participationVibes">
+          <h4>{{ vibe.name }}</h4>
+          <p>Version: {{ vibe.version }}</p>
+          <p>Uploaded {{ vibe.uploadedDate }} by {{ vibe.uploadedBy }}</p>
+        </div>
+        <div class="vibe-card add-card">
+          <button (click)="addParticipationVibe()">Additional vibe +</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
