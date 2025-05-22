@@ -36,3 +36,65 @@
   justify-content: flex-end;
   gap: 8px;
 }
+
+.tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.tab {
+  padding: 8px 16px;
+  background-color: #ddd;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+}
+
+.tab.active {
+  background-color: purple;
+  color: #fff;
+}
+
+.config-card {
+  position: relative;
+}
+
+.new-config {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+
+.hospital-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hospital-card {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.hospital-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.actions button {
+  margin-left: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 4px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
