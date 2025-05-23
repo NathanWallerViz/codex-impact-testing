@@ -1,13 +1,29 @@
 /* Global styles */
 body {
   margin: 0;
-  background-color: #e0e0e0;
+  background-color: #f3f3f3;
 }
 
 /* Heading colors */
 h1, h2, h3, h4, h5 {
   background-color: #7f5eba;
   color: #fff;
-  padding: 4px;
+  padding: 8px 16px;
   border-radius: 4px;
+  margin-top: 0;
+}
+
+.card {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-header {
+  background-color: #7f5eba;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px 4px 0 0;
+  margin: -16px -16px 16px -16px;
 }

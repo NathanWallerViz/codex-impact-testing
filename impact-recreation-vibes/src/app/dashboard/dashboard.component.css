@@ -1,10 +1,10 @@
 .content {
-  max-width: 800px;
-  margin: 40px auto;
   flex: 1;
   padding: 16px;
-  background-color: #f5f5f5;
+  background-color: #fff;
   border-radius: 8px;
+  margin: 16px;
+  width: calc(100% - 32px);
 }
 
 .dashboard-title {
@@ -18,14 +18,14 @@
   background-color: #fff;
   padding: 16px;
   border-radius: 8px;
-  margin-top: 20px;
+  margin-bottom: 16px;
 }
 
 .vibe-entry {
   background-color: #fff;
   padding: 16px;
   border-radius: 8px;
-  margin-top: 20px;
+  margin-bottom: 16px;
 }
 
 .news-header,
