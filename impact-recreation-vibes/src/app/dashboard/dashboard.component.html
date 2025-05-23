@@ -1,6 +1,6 @@
-<div class="content">
+<div class="content card">
   <h1 class="dashboard-title">Dashboard</h1>
-  <section class="vibe-news">
+  <section class="vibe-news card">
     <h2 class="news-header">Vibe News</h2>
     <ul>
       <li *ngFor="let item of newsItems; let i = index">
@@ -13,7 +13,7 @@
     </ul>
   </section>
 
-  <section class="vibe-entry">
+  <section class="vibe-entry card">
     <h2 class="entry-header">Vibe Entry</h2>
     <div class="new-item">
       <input [(ngModel)]="newNewsTitle" placeholder="Title" />

@@ -1,4 +1,4 @@
-<div class="admin-page">
+<div class="admin-page card">
   <nav class="tabs">
     <div class="tab" [class.active]="currentTab === 'setup'" (click)="currentTab = 'setup'">Program Set Up</div>
     <div class="tab" [class.active]="currentTab === 'quarter'" (click)="currentTab = 'quarter'">Quarter Close</div>
@@ -7,7 +7,7 @@
 
   <div *ngIf="currentTab === 'setup'">
 
-  <section class="programs">
+  <section class="programs card">
     <h2>Programs</h2>
     <button (click)="addProgram()">Add Program</button>
     <ul>
@@ -17,7 +17,7 @@
     </ul>
   </section>
 
-  <section class="program-detail" *ngIf="selectedProgram">
+  <section class="program-detail card" *ngIf="selectedProgram">
     <h3>Program Details</h3>
     <label>Name <input [(ngModel)]="selectedProgram!.name" /></label>
     <label>Start Date <input type="date" [(ngModel)]="selectedProgram!.startDate" /></label>
@@ -33,7 +33,7 @@
     <label>Process Level <input [(ngModel)]="selectedProgram!.processLevel" /></label>
   </section>
 
-  <section class="categories" *ngIf="selectedProgram">
+  <section class="categories card" *ngIf="selectedProgram">
     <h3>Categories</h3>
     <button (click)="addCategory()">Add Category</button>
     <ul>
@@ -43,7 +43,7 @@
     </ul>
   </section>
 
-  <section class="category-detail" *ngIf="selectedCategory">
+  <section class="category-detail card" *ngIf="selectedCategory">
     <h4>Category Details</h4>
     <label>Category Name <input [(ngModel)]="selectedCategory!.name" /></label>
     <label>Start Date <input type="date" [(ngModel)]="selectedCategory!.startDate" /></label>
@@ -51,7 +51,7 @@
     <label>Visible <input type="checkbox" [(ngModel)]="selectedCategory!.visible" /></label>
   </section>
 
-  <section class="suppliers" *ngIf="selectedCategory">
+  <section class="suppliers card" *ngIf="selectedCategory">
     <h4>Suppliers</h4>
     <button (click)="addSupplier()">Add Supplier</button>
     <ul>
@@ -61,7 +61,7 @@
     </ul>
   </section>
 
-  <section class="supplier-detail" *ngIf="selectedSupplier">
+  <section class="supplier-detail card" *ngIf="selectedSupplier">
     <h5>Supplier Details</h5>
     <label>Name <input [(ngModel)]="selectedSupplier!.name" /></label>
     <label>Visible <input type="checkbox" [(ngModel)]="selectedSupplier!.visible" /></label>
@@ -85,7 +85,7 @@
       <span>Quarter Management</span>
       <span class="dates">Last Lockdown: {{ lastLockdownDate || 'N/A' }} | Last Close: {{ lastCloseDate || 'N/A' }}</span>
     </header>
-    <div class="quarter-card">
+    <div class="quarter-card card">
       <h3>{{ quarterAction === 'lockdown' ? 'Initiate Vibe Lockdown' : 'Initiate Vibe Close' }}</h3>
       <p *ngIf="quarterAction === 'lockdown'">Locking the quarter prevents further edits.</p>
       <p *ngIf="quarterAction === 'close'">Closing the quarter finalizes all vibes.</p>
@@ -94,7 +94,7 @@
   </div>
 
   <div *ngIf="currentTab === 'participation'" class="participation-tab">
-    <div class="participation-card">
+    <div class="participation-card card">
       <h3>Participation Vibe List</h3>
       <div class="vibe-list">
         <div class="vibe-card" *ngFor="let vibe of participationVibes">
